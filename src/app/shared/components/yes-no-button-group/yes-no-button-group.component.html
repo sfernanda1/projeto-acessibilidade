@@ -1,5 +1,12 @@
-<div class="button-group">
-  <label class="label">{{label}}</label>
-  <button (click)="activate(options.YES)" type="button" class="button button-yes" [class.button-pressed]="value === options.YES"> Yes</button>
-  <button (click)="activate(options.NO)" type="button" class="button button-no" [class.button-pressed]="value === options.NO"> No</button>
+<div role="radiogroup" [attr.aria-labelledby]="id" class="button-group">
+  <label [attr.id]="id" class="label">{{label}}</label>
+
+  <!-- Seria mais fácil usar o radio ao invés do button (tente ao máximo usar as tags semânticas do html) -->
+  <!-- <input type="radio" id="yes" name="yesNoAnswer" value="true">
+  <label for="yes">Yes</label>
+  <input type="radio" id="no" name="yesNoAnswer" value="true">
+  <label for="no">No</label> -->
+
+  <button [attr.aria-checked]="value === options.YES " role="radio" (click)="activate(options.YES)" type="button" class="button button-yes" [class.button-pressed]="value === options.YES"> Yes</button>
+  <button [attr.aria-checked]="value === options.NO" role="radio" (click)="activate(options.NO)" type="button" class="button button-no" [class.button-pressed]="value === options.NO"> No</button>
 </div>
