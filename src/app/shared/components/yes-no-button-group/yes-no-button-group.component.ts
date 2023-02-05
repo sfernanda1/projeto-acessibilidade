@@ -30,7 +30,7 @@ export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
 
   public id: string = null;
 
-  constructor(uniqueIdService: UniqueIdService) { }
+  constructor(public uniqueIdService: UniqueIdService) { }
   ngOnInit(): void {
     //Para gerar id único
     this.id = this.uniqueIdService.generateUniqueIdWithPrefix(`yes-no-button-group`)
