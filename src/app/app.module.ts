@@ -1,3 +1,5 @@
+import { DisabledControlModule } from './shared/directive/disable-control/disable-control.module';
+import { DisabledControlDirective } from './shared/directive/disable-control/disable-control-directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent
   ],
   imports: [
+    DisabledControlModule,
     BrowserModule,
     YesNoButtonGroupModule,
     ReactiveFormsModule,
